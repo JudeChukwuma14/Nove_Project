@@ -31,7 +31,7 @@ const payment = async (req, res) => {
       postcode,
       phone,
       amount: totalAmount * 100,
-      callback_url: "http://localhost:5333/callback",
+      callback_url: "https://nove-project.onrender.com/callback",
     }
 
     const paymentResponse = await initializedPayment(transactionData)
