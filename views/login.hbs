@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Poppins;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .signup-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-form h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #888;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .error {
+            color: red;
+            display: none;
+            font-size: 15px;
+        }
+
+        .signup-btn {
+            padding: 10px;
+            border: none;
+            background-color: #15803D;
+            color: white;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .signup-btn:disabled {
+            background-color: #ccc;
+        }
+
+
+
+
+
+
+        /* Container for the login form */
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Styling the form */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Styling the input groups */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            border-color: #15803D;
+            outline: none;
+        }
+
+        /* Error message styling */
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+            margin-top: 5px;
+        }
+
+        /* Button styling */
+        .login-btn {
+            padding: 12px;
+            background-color: #15803D;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #0b5f2c;
+        }
+
+        /* Responsive design */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 15px;
+                width: 90%;
+            }
+
+            .login-form h2 {
+                font-size: 24px;
+            }
+
+            .input-group input {
+                padding: 10px 35px;
+            }
+
+            .login-btn {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+</head>
+<bod>
+    <div class="signup-container">
+        <form id="signupForm" class="signup-form" action="/signin" method="post">
+            <h2>Sign In</h2>
+
+            <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email" name="email">
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" name="password">
+            </div>
+
+
+            <button type="submit" class="signup-btn" id="signupBtn">Login</button>
+        </form>
+       <p>Do not have an Account <a href="/signup">Register</a></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        let successMessage = "{{success}}"
+        let errorMessage = "{{error}}"
+        if (successMessage) {
+            Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: successMessage,
+            });
+        }
+        if (errorMessage) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: errorMessage,
+            });
+        }
+    </script>
+    </body>
+
+</html>

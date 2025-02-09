@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+{{>meta}}
+
+<body>
+    {{>header}}
+
+
+    <!-- Page Add Section Begin -->
+    <section class="page-add">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="page-breadcrumb">
+                        <h2>Dresses<span>.</span></h2>
+                        <a href="#">Home</a>
+                        <a href="#">Dresses</a>
+                        <a class="active" href="#">Night Dresses</a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <img src="/img/add.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Add Section End -->
+
+    <!-- Categories Page Section Begin -->
+    <section class="categories-page spad">
+        <div class="container">
+            <div class="categories-controls">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="categories-filter">
+                            <div class="cf-left">
+                                <form action="#">
+                                    <select class="sort">
+                                        <option value="">Sort by</option>
+                                        <option value="">Orders</option>
+                                        <option value="">Newest</option>
+                                        <option value="">Price</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="latest-products spad">
+                <div class="container">
+                    <div class="product-filter">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <div class="section-title">
+                                    <h2>Latest Products</h2>
+                                </div>
+                                <ul class="product-controls">
+                                    <li data-filter="*">All</li>
+                                    <li data-filter=".dresses">Dresses</li>
+                                    <li data-filter=".bags">Bags</li>
+                                    <li data-filter=".shoes">Shoes</li>
+                                    <li data-filter=".accesories">Accesories</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="product-list">
+                        {{#each product}}
+                        <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="/productdetail/{{_id}}"><img src="{{newImage}}" alt=""></a>
+                                    <div class="p-status">new</div>
+                                </figure>
+                                <div class="product-text">
+                                    <a href="/productdetail/{{_id}}">
+                                        <h6>{{productName}}</h6>
+                                    </a>
+                                    <p>${{price}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                        {{!-- <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-2.jpg" alt=""></a>
+                                    <div class="p-status sale">sale</div>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>Yellow Maxi Dress</h6>
+                                    <p>$25.90</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mix all shoes accesories">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-3.jpg" alt=""></a>
+                                    <div class="p-status">new</div>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>One piece bodysuit</h6>
+                                    <p>$19.90</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mix all shoes accesories">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-4.jpg" alt=""></a>
+                                    <div class="p-status popular">popular</div>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>Blue Dress with details</h6>
+                                    <p>$35.50</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mix all dresses shoes">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-5.jpg" alt=""></a>
+                                    <div class="p-status">new</div>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>Green Dress with details</h6>
+                                    <p>$22.90</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mix all accesories bags">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-6.jpg" alt=""></a>
+                                    <div class="p-status sale">sale</div>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>Yellow Maxi Dress</h6>
+                                    <p>$25.90</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-7.jpg" alt=""></a>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>One piece bodysuit</h6>
+                                    <p>$19.90</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6 mix all accesories bags">
+                            <div class="single-product-item">
+                                <figure>
+                                    <a href="#"><img src="/img/products/img-8.jpg" alt=""></a>
+                                    <div class="p-status popular">popular</div>
+                                </figure>
+                                <div class="product-text">
+                                    <h6>Blue Dress with details</h6>
+                                    <p>$35.50</p>
+                                </div>
+                            </div>
+                        </div> --}}
+                    </div>
+                </div>
+            </section>
+            <div class="more-product">
+                <div class="">
+                    <div class=" pages">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <a href="#">2</a>
+                        <a href="#" class="active">4</a>
+                        <a href="#">6</a>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Page Section End -->
+
+    <!-- Footer Section Begin -->
+    {{>footer}}
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/mixitup.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
